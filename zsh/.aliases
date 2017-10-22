@@ -1,0 +1,46 @@
+# Aliasse für Peter...!
+
+alias vi=${EDITOR}
+alias vim=${EDITOR}
+
+
+alias ls='ls --color=auto -h'
+alias ll='ls -lh'
+alias la='ls -alFh'
+alias l='ls -lFh'
+
+alias '...'='cd ../..'
+alias '..'='cd ..'
+
+alias 'rm'='rm -i'
+
+alias dir='ls --color=auto --format=vertical'
+alias vdir='ls --color=auto --format=long'
+
+alias grep='grep --color'
+
+# ganz neue namen:
+alias 'du'='du -sh'
+alias 'df'='df -h'
+
+
+alias 'rgrep'='grep -R'
+
+alias 'gs'='git status'
+alias 'gd'='git diff'
+alias 'gdc'='git diff --cached'
+alias 'gb'='git branch'
+alias 'gg'='git grep'
+alias 'gl'='git log --decorate --graph --all --stat --pretty=fuller'
+alias 'gitk'='gitk --all'
+
+
+
+# colorful diff...
+alias 'difff'='git diff --no-index'
+
+findname_func(){
+    find -name \*$1\*
+}
+
+alias 'findname'=findname_func
