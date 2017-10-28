@@ -37,6 +37,7 @@
 #
 # TODO:
 #  - vim
+#       - .vimbackup?
 #       - autoreload
 #       - jedi?
 #       - python: syntax & pep8 checker
