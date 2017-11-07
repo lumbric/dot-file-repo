@@ -87,6 +87,7 @@ SYMLINKS['.vimrc']="${REPOPATH}/neovim/init.vim"
 
 # Necessary if no neovim installed for VIM fallback..
 mkdir -p ~/.local/share/nvim/site
+mkdir -p ~/.local/share/nvim/backup
 
 echo Updating repo and submodules...
 cd $(dirname $0)

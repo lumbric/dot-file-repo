@@ -146,7 +146,7 @@ set undoreload=10000        " Maximum number lines to save for undo on a buffer 
 
 " from https://coderwall.com/p/sdhfug/vim-swap-backup-and-undo-files
 set backup
-"set backupdir=~/.vim/.backup//
+set backupdir=~/.local/share/nvim/backup,.,/tmp
 
 " TODO views?
 
