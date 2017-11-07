@@ -144,6 +144,13 @@ set undolevels=1000         " Maximum number of changes that can be undone
 set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
 
 
+" from https://coderwall.com/p/sdhfug/vim-swap-backup-and-undo-files
+set backup
+"set backupdir=~/.vim/.backup//
+
+" TODO views?
+
+
 "*****************************************************************************
 "" Key mappings
 "*****************************************************************************
