@@ -228,6 +228,9 @@ filetype plugin indent on   " Automatically detect file types.
 "    \ set autoindent
 "    \ set fileformat=unix
 
+" otherwise VIM is unusable for py files in large folders like home
+let g:pymode_rope = 0
+
 " Flag bad whitespaces
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
