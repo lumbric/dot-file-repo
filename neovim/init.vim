@@ -122,6 +122,8 @@ set tw=79 ts=4 sw=4 sta et sts=4 ai   " set width...
 " don't unindent line completely when typing hash
 set cinkeys-=0#
 
+" nvim bug https://github.com/neovim/neovim/issues/5990
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
 
 "*****************************************************************************
 "" Misc
