@@ -40,7 +40,6 @@
 #       - .vimbackup?
 #       - where are plugins installed?
 #       - submodules commited in dot-file-repo?
-#       - jump to position where last time in file
 #       - autoinstall plugins?
 #       - autoreload
 #       - jedi?

@@ -31,15 +31,31 @@
 " ░                                                         
 "
 "
+"
+" Sources of inspiration for this file:
+"   - https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
+"   - https://github.com/vim/vim/blob/master/runtime/defaults.vim
+"   - https://github.com/spf13/spf13-vim
+
+
 " Stupid color theme workaround for VIM...
 " see https://stackoverflow.com/a/10778126/859591
 set t_Co=256  " Note: Neovim ignores t_Co and other terminal codes.
+
+
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
 
 
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
 call plug#begin('~/.local/share/nvim/plugged')
+
+" General
+Plug 'tpope/vim-sensible'           " almost everything already here, might be removed in future
+                                    " See here https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
 
 
 " Themes
@@ -63,6 +79,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'               " GIT integration
 Plug 'a.vim'                            " C/Cpp change between .c and .h files
 Plug 'scrooloose/nerdcommenter'         " comment out/in 
+Plug 'tmhedberg/matchit'                " better match with %
 
 
 " Programming languages
@@ -106,7 +123,21 @@ call plug#end()
 set encoding=utf-8
 setlocal spell spelllang=en_us
 set spell
+
+set autoindent
+set backspace=indent,eol,start
+set complete-=i
+set smarttab
+
+set nrformats-=octal             " what is this?
+
+
 "set mousemodel=popup            " TODO what is this?
+"
+" better copy & paste with mouse
+if has('mouse')
+    set mouse=a
+endif
 
 set hlsearch                     " Highlight when searching
 "set backspace=indent,eol,start   " Fix backspace indent  <-- TODO what is this?
@@ -116,10 +147,12 @@ set ignorecase                   " search case insensitive
 set nofoldenable                 " Open files unfolded...
 "set foldlevel=99
 
+set wildmenu                     " display completion matches in a status line
+
 set tw=79 ts=4 sw=4 sta et sts=4 ai   " set width...
 
 " http://vim.wikia.com/wiki/Restoring_indent_after_typing_hash
-" don't unindent line completely when typing hash
+" don't unindent line completely when typing hash --> important for openscad
 set cinkeys-=0#
 
 " nvim bug https://github.com/neovim/neovim/issues/5990
@@ -145,6 +178,9 @@ set undofile                " So is persistent undo ...
 set undolevels=1000         " Maximum number of changes that can be undone
 set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
 
+" Show a few lines of context around the cursor.  Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
 
 " from https://coderwall.com/p/sdhfug/vim-swap-backup-and-undo-files
 set backup
@@ -152,11 +188,31 @@ set backupdir=~/.local/share/nvim/backup,.,/tmp
 
 " TODO views?
 
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
+
+
+" Do incremental searching when it's possible to timeout.
+" PR 2017-12-10 no idea if this is good, but sounds good...
+if has('reltime')
+  set incsearch
+endif
+
 
 "*****************************************************************************
 "" Key mappings
 "*****************************************************************************
 let mapleader = ","
+
+if !has('nvim') && &ttimeoutlen == -1
+  set ttimeout
+  set ttimeoutlen=100
+endif
 
 " Smash ESC
 inoremap jk <Esc>
@@ -174,7 +230,26 @@ nnoremap x "_x
 nnoremap <CR> :noh<CR><CR>
 "nnoremap <Esc> :noh<CR><Esc> " this makes problems!
 
+"" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
+
 "" See also plugin config section ""
+
+
+"*****************************************************************************
+"" Custom commands
+"*****************************************************************************
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+" Revert with: ":delcommand DiffOrig".
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+                  \ | wincmd p | diffthis
+endif
 
 
 "*****************************************************************************
@@ -198,9 +273,12 @@ set background=dark
 "highlight SpellBad term=standout term=underline ctermbg=8 ctermfg=1 cterm=NONE
 "highlight SpellBad term=standout term=underline ctermbg=0 ctermfg=1 cterm=underline
 
-syntax on
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
+
 set number
-"set ruler    " TODO what is this?
+set ruler    " TODO what is this?
 
 "" http://askubuntu.com/questions/67/how-do-i-enable-full-color-support-in-vim
 "if $COLORTERM == 'gnome-terminal'
