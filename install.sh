@@ -37,17 +37,19 @@
 #
 # TODO:
 #  - vim
+#       - grep command? Ack suffices?
+#       - 72hars for git commit?
 #       - .vimbackup?
 #       - where are plugins installed?
-#       - submodules commited in dot-file-repo?
+#       - submodules commited in dot-file-repo for pinning plugins?
 #       - autoinstall plugins?
 #       - autoreload
+#       - display wrong white spaces
 #       - jedi?
 #       - python: syntax & pep8 checker
 #       - c: syntax checker
 #       - make command
 #       - command for uploading to esp8266
-#       - grep command? Ack suffices?
 #       - configure airline status bar
 #       - GIT? display changed lines?
 #  - git
@@ -61,6 +63,8 @@
 #       - iso date, not only time
 #       - remove the FAIL, only red indication of prompt
 #       - disable substition of dir in prompt
+#  - install file
+#       - changes in install files should automatically deploy to other machines (no need for later mkdir etc)
 #  - tmux
 #  - screen
 #  - awesome
