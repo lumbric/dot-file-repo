@@ -183,8 +183,10 @@ set undoreload=10000        " Maximum number lines to save for undo on a buffer 
 set scrolloff=5
 
 " from https://coderwall.com/p/sdhfug/vim-swap-backup-and-undo-files
+" potential security hole if sensitive files are copied to home folder?
+" FIXME this does not work as intended somehow, why no file hierarchy?
 set backup
-set backupdir=~/.local/share/nvim/backup,.,/tmp
+set backupdir=~/.local/share/nvim/backup//,.,/tmp
 
 " TODO views?
 
