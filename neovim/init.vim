@@ -73,13 +73,14 @@ Plug 'scrooloose/nerdtree'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }    " seems to be faster than CTRL+P!
 
 
-" Gernal programming helpers
+" General programming helpers
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'               " GIT integration
 Plug 'a.vim'                            " C/Cpp change between .c and .h files
 Plug 'scrooloose/nerdcommenter'         " comment out/in 
 Plug 'tmhedberg/matchit'                " better match with %
+Plug 'mhinz/vim-grepper'
 
 
 " Programming languages
@@ -249,9 +250,15 @@ endif
 " Only define it when not defined already.
 " Revert with: ":delcommand DiffOrig".
 if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+    command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
                   \ | wincmd p | diffthis
 endif
+
+" Grep
+"if executable('rg')
+"    set grepprg=rg\ --no-heading\ --vimgrep
+"    set grepformat=%f:%l:%c:%m
+"endif
 
 
 "*****************************************************************************
@@ -385,3 +392,12 @@ nnoremap <silent> <leader>ge :Gedit<CR>
 " Mnemonic _i_nteractive
 nnoremap <silent> <leader>gi :Git add -p %<CR>
 nnoremap <silent> <leader>gg :SignifyToggle<CR>
+
+
+""" Grepper
+let g:grepper = {}
+let g:grepper.tools = ['rg', 'git', 'ag', 'grep']
+"nnoremap <leader>g :Grepper -tool git<cr>
+"nnoremap <leader>G :Grepper -tool ag<cr>
+"nmap gs <plug>(GrepperOperator)
+"xmap gs <plug>(GrepperOperator)

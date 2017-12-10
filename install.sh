@@ -38,6 +38,7 @@
 # TODO:
 #  - vim
 #       - grep command? Ack suffices?
+#           - https://github.com/mhinz/vim-grepper/wiki/example-configurations-and-mappings
 #       - 72hars for git commit?
 #       - .vimbackup?
 #       - where are plugins installed?
