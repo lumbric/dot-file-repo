@@ -397,6 +397,8 @@ nnoremap <silent> <leader>gg :SignifyToggle<CR>
 """ Grepper
 let g:grepper = {}
 let g:grepper.tools = ['rg', 'git', 'ag', 'grep']
+let g:grepper.dir = 'repo,file'
+let g:grepper.simple_prompt = 1
 "nnoremap <leader>g :Grepper -tool git<cr>
 "nnoremap <leader>G :Grepper -tool ag<cr>
 "nmap gs <plug>(GrepperOperator)
