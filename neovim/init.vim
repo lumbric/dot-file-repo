@@ -238,6 +238,17 @@ if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
 
+" Jump back to quick fix after [Enter]
+"augroup MyQFCommand
+"    au!
+"    au FileType qf nnoremap <buffer> <CR> <CR><C-W>p
+"augroup END
+
+nnoremap <leader>q :cclose<CR>          " Close quickfix list
+nnoremap <C-j> :cnext<CR>               " Next in quick fix list
+nnoremap <C-k> :cprevious<CR>           " Previous in quick fix list
+
+
 "" See also plugin config section ""
 
 
@@ -395,11 +406,10 @@ nnoremap <silent> <leader>gg :SignifyToggle<CR>
 
 
 """ Grepper
+" see also mappings for quickfix list above
 let g:grepper = {}
 let g:grepper.tools = ['rg', 'git', 'ag', 'grep']
 let g:grepper.dir = 'repo,file'
 let g:grepper.simple_prompt = 1
-"nnoremap <leader>g :Grepper -tool git<cr>
-"nnoremap <leader>G :Grepper -tool ag<cr>
-"nmap gs <plug>(GrepperOperator)
-"xmap gs <plug>(GrepperOperator)
+let g:grepper.highlight = 1
+nnoremap <leader>gg :Grepper<cr>
