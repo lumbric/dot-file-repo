@@ -47,6 +47,7 @@
 #       - easily change lang or disable spell? (remember for files?)
 #       - autoinstall plugins?
 #       - autoreload
+#       - interesting plugin? https://github.com/tpope/vim-unimpaired
 #       - display wrong white spaces
 #       - jedi?
 #       - python: syntax & pep8 checker
