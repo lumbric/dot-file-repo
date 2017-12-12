@@ -349,6 +349,8 @@ autocmd! BufNewFile,BufRead *.scad setlocal ft=cpp
 autocmd! BufNewFile,BufRead *.proto setlocal ft=cpp
 
 
+au FileType gitcommit set tw=72
+
 
 "*****************************************************************************
 "" Plugin config
