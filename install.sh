@@ -113,6 +113,7 @@ for link_name in "${!SYMLINKS[@]}"; do
     if [ -f ~/$link_name -a ! -h ~/$link_name -o -d ~/$link_name ]; then
         echo File \"$link_name\" already existing, moving to backup dir $REPOPATH/backup
         mkdir -p $REPOPATH/backup
+        mkdir -p $(dirname $REPOPATH/backup/$link_name)
         mv ~/$link_name $REPOPATH/backup/$link_name.`date --iso`
     fi
     if [ -h ~/$link_name ]; then
