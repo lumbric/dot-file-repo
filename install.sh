@@ -89,6 +89,7 @@ SYMLINKS['.zshrc']="${REPOPATH}/zsh/.zshrc"
 SYMLINKS['.config/nvim/init.vim']="${REPOPATH}/neovim/init.vim"
 SYMLINKS['.oh-my-zsh']="${REPOPATH}/zsh/oh-my-zsh"
 SYMLINKS['.local/share/nvim/site/autoload/plug.vim']="${REPOPATH}/neovim/vim-plug/plug.vim"
+SYMLINKS['.local/share/nvim/plugged']="${REPOPATH}/neovim/plugged"
 
 # VIM fallback...
 SYMLINKS['.vim']="${HOME}/.local/share/nvim/site"
