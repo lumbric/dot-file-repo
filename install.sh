@@ -37,15 +37,8 @@
 #
 # TODO:
 #  - vim
-#       - grep command? Ack suffices?
-#           - https://github.com/mhinz/vim-grepper/wiki/example-configurations-and-mappings
-#       - 72hars for git commit?
 #       - org mode equivalent for lists?
-#       - .vimbackup?
-#       - where are plugins installed?
-#       - submodules commited in dot-file-repo for pinning plugins?
 #       - easily change lang or disable spell? (remember for files?)
-#       - autoinstall plugins?
 #       - autoreload
 #       - interesting plugin? https://github.com/tpope/vim-unimpaired
 #       - display wrong white spaces
