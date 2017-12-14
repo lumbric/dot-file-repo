@@ -96,7 +96,7 @@ mkdir -p ~/.local/share/nvim/backup
 
 echo Updating repo and submodules...
 cd $(dirname $0)
-git submodule update --recursive
+#git submodule update --init --recursive
 
 
 # Create symlinks...
@@ -104,15 +104,14 @@ echo
 echo Creating/updating symlinks...
 for link_name in "${!SYMLINKS[@]}"; do
     # backup existing if exists and not symlink...
-    if [ -f ~/$link_name -a ! -h ~/$link_name -o -d ~/$link_name ]; then
-        echo File \"$link_name\" already existing, moving to backup dir $REPOPATH/backup
-        mkdir -p $REPOPATH/backup
-        mkdir -p $(dirname $REPOPATH/backup/$link_name)
-        mv ~/$link_name $REPOPATH/backup/$link_name.`date --iso`
-    fi
     if [ -h ~/$link_name ]; then
         echo Removing already existing symlink \"$link_name\"...
         rm ~/$link_name
+    elif [ -f ~/$link_name -o -d ~/$link_name ]; then
+        echo File \"$link_name\" already existing, moving to backup dir $REPOPATH/backup
+        mkdir -p $REPOPATH/backup
+        mkdir -p $(dirname $REPOPATH/backup/$link_name)
+        mv -i ~/$link_name $REPOPATH/backup/$link_name.$(date -u +"%Y-%m-%dT%H-%M-%SZ")
     fi
     target=${SYMLINKS[$link_name]}
 
