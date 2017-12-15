@@ -4,3 +4,48 @@
 [submodule "neovim/vim-plug"]
 	path = neovim/vim-plug
 	url = https://github.com/junegunn/vim-plug.git
+[submodule "neovim/plugged/vim-commentary"]
+	path = neovim/plugged/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "neovim/plugged/vim-sensible"]
+	path = neovim/plugged/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule "neovim/plugged/vim-openscad"]
+	path = neovim/plugged/vim-openscad
+	url = https://github.com/sirtaj/vim-openscad.git
+[submodule "neovim/plugged/ctrlp.vim"]
+	path = neovim/plugged/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "neovim/plugged/python-mode"]
+	path = neovim/plugged/python-mode
+	url = https://github.com/python-mode/python-mode.git
+[submodule "neovim/plugged/nerdcommenter"]
+	path = neovim/plugged/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "neovim/plugged/vim-fugitive"]
+	path = neovim/plugged/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "neovim/plugged/a.vim"]
+	path = neovim/plugged/a.vim
+	url = https://github.com/vim-scripts/a.vim.git
+[submodule "neovim/plugged/matchit"]
+	path = neovim/plugged/matchit
+	url = https://github.com/tmhedberg/matchit.git
+[submodule "neovim/plugged/vim-surround"]
+	path = neovim/plugged/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "neovim/plugged/vim-airline"]
+	path = neovim/plugged/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "neovim/plugged/vim-grepper"]
+	path = neovim/plugged/vim-grepper
+	url = https://github.com/mhinz/vim-grepper.git
+[submodule "neovim/plugged/Zenburn"]
+	path = neovim/plugged/Zenburn
+	url = https://github.com/jnurmine/Zenburn.git
+[submodule "neovim/plugged/nerdtree"]
+	path = neovim/plugged/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "neovim/plugged/vim-kalisi"]
+	path = neovim/plugged/vim-kalisi
+	url = https://github.com/freeo/vim-kalisi.git
