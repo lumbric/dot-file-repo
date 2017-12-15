@@ -183,14 +183,6 @@ set undoreload=10000        " Maximum number lines to save for undo on a buffer 
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
 
-" from https://coderwall.com/p/sdhfug/vim-swap-backup-and-undo-files
-" potential security hole if sensitive files are copied to home folder?
-" FIXME this does not work as intended somehow, why no file hierarchy?
-set backup
-set backupdir=~/.local/share/nvim/backup//,.,/tmp
-
-" TODO views?
-
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
@@ -205,6 +197,45 @@ autocmd BufReadPost *
 if has('reltime')
   set incsearch
 endif
+
+
+"*****************************************************************************
+"" Directories
+"*****************************************************************************
+" from https://coderwall.com/p/sdhfug/vim-swap-backup-and-undo-files
+" potential security hole if sensitive files are copied to home folder?
+" FIXME this does not work as intended somehow, why no file hierarchy?
+set backup
+
+let dir_list = {
+            \ 'backup': 'backupdir',
+            \ 'views': 'viewdir',
+            \ 'swap': 'directory' }
+
+if has('persistent_undo')
+    let dir_list['undo'] = 'undodir'
+endif
+
+for [dirname, settingname] in items(dir_list)
+    let directory = $HOME . '/.local/share/nvim/' . dirname . '/'
+    if exists("*mkdir")
+        if !isdirectory(directory)
+            call mkdir(directory)
+        endif
+    endif
+    if !isdirectory(directory)
+        echo "Warning: Unable to create backup directory: " . directory
+        echo "Try: mkdir -p " . directory
+    else
+        let directory = substitute(directory, " ", "\\\\ ", "g")
+        exec "set " . settingname . "=" . directory . '/'
+    endif
+endfor
+
+" Automatically create .backup directory, writable by the group.
+"if filewritable(".") && ! filewritable(".backup")
+"  silent execute '!umask 002; mkdir .backup'
+"endif
 
 
 "*****************************************************************************
