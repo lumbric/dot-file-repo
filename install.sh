@@ -19,7 +19,7 @@
 #                                                                   `--'
 #
 # How to install:
-#   git clone --recursive http://git.suuf.cc/dot-file-repo.git .dot-file-repo
+#   git clone --recursive https://github.com/lumbric/dot-file-repo.git .dot-file-repo
 #   bash
 #   ./.dot-file-repo/install.sh
 #   
