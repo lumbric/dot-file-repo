@@ -39,6 +39,7 @@
 #  - vim
 #       - org mode equivalent for lists?
 #       - easily change lang or disable spell? (remember for files?)
+#       - profile startup time
 #       - autoreload
 #       - interesting plugin? https://github.com/tpope/vim-unimpaired
 #       - display wrong white spaces
@@ -53,6 +54,7 @@
 #       - hook template folder (should be merged with default hooks)
 #  - zsh
 #       - keybindings for all terminals
+#       - profile startup time
 #       - trailing slash
 #       - make it faster, no seraching for unknown commands
 #       - shortcats, aliases, i.e. grep etc
