@@ -1,15 +1,12 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="tjkirch"
 # Other interesting themes:    - PR 2013-12-21
-#    robbyrussell: minimal, but nice
-#    http://zshthem.es/screenshots/robbyrussell.png
 #
 #    dst                
 #    rkj-repos          
@@ -22,8 +19,6 @@ ZSH_THEME="tjkirch"
 #    xiong-chiamiov     
 
 
-# Example aliases
-alias zshconfig="vi ~/.zshrc"
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -165,13 +160,6 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-
-# copied from /etc/zsh/newuser.zshrc.recommended, do we need this?
-# Use modern completion system
-autoload -Uz compinit
-compinit
-
 
 
 source ~/.dot-file-repo/zsh/.aliases
