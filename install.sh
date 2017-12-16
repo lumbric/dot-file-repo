@@ -53,19 +53,19 @@
 #  - git
 #       - hook template folder (should be merged with default hooks)
 #  - zsh
+#       - iso date, not only time
+#       - change color of promt on ssh host
 #       - keybindings for all terminals
-#       - profile startup time
-#       - trailing slash
 #       - make it faster, no seraching for unknown commands
 #       - shortcats, aliases, i.e. grep etc
 #       - make a nicer theme
-#       - iso date, not only time
 #       - remove the FAIL, only red indication of prompt
 #       - disable substition of dir in prompt
 #  - install file
 #       - changes in install files should automatically deploy to other machines (no need for later mkdir etc)
 #  - tmux
 #  - screen
+#  - roxterm
 #  - awesome
 #  - htop config?
 #
