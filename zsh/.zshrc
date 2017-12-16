@@ -140,6 +140,7 @@ setopt CDABLE_VARS
 # enable zmv - move multiple files at once
 autoload -U zmv
 
+source ~/.dot-file-repo/zsh/ssh_color.zsh
 
 source ~/.dot-file-repo/zsh/.aliases
 if [ -e "${HOME}/.dot-file-repo/zsh/.zsh_aliases.local" ]; then
