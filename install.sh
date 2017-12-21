@@ -53,6 +53,7 @@
 #  - git
 #       - hook template folder (should be merged with default hooks)
 #  - zsh
+#       - plugins for last dirs or often used dirs?
 #       - iso date, not only time
 #       - change color of promt on ssh host
 #       - keybindings for all terminals
