@@ -49,3 +49,6 @@
 [submodule "neovim/plugged/vim-kalisi"]
 	path = neovim/plugged/vim-kalisi
 	url = https://github.com/freeo/vim-kalisi.git
+[submodule "zsh/powerlevel9k"]
+	path = zsh/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k.git

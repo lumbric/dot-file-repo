@@ -82,10 +82,18 @@ REPOPATH=~/.dot-file-repo
 # generate symlinks in $HOME for these files
 SYMLINKS['.gitconfig']="${REPOPATH}/git/.gitconfig"
 SYMLINKS['.zshrc']="${REPOPATH}/zsh/.zshrc"
-SYMLINKS['.config/nvim/init.vim']="${REPOPATH}/neovim/init.vim"
+
 SYMLINKS['.oh-my-zsh']="${REPOPATH}/zsh/oh-my-zsh"
+SYMLINKS['.oh-my-zsh']="${REPOPATH}/zsh/oh-my-zsh"
+
+SYMLINKS["${REPOPATH}/zsh/oh-my-zsh/custom/themes/powerlevel9k"]="${REPOPATH}/zsh/powerlevel9k"
+SYMLINKS['.local/share/fonts/DroidSansMonoNerdFont.otf']="${REPOPATH}/zsh/DroidSansMonoNerdFont.otf"
+SYMLINKS['.config/fontconfig/conf.d/10-nerdfont-symbols.conf']="${REPOPATH}/zsh/10-nerdfont-symbols.conf"
+
+SYMLINKS['.config/nvim/init.vim']="${REPOPATH}/neovim/init.vim"
 SYMLINKS['.local/share/nvim/site/autoload/plug.vim']="${REPOPATH}/neovim/vim-plug/plug.vim"
 SYMLINKS['.local/share/nvim/plugged']="${REPOPATH}/neovim/plugged"
+
 
 # VIM fallback...
 SYMLINKS['.vim']="${HOME}/.local/share/nvim/site"

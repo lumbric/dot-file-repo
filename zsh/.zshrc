@@ -1,3 +1,5 @@
+export TERM="xterm-256color"
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -5,9 +7,10 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="tjkirch"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 # Other interesting themes:    - PR 2013-12-21
 #
+#    tjkirch
 #    dst                
 #    rkj-repos          
 #    smt                
@@ -146,3 +149,27 @@ source ~/.dot-file-repo/zsh/.aliases
 if [ -e "${HOME}/.dot-file-repo/zsh/.zsh_aliases.local" ]; then
     source ~/.dot-file-repo/zsh/.zsh_aliases.local
 fi
+
+source ~/.dot-file-repo/zsh/powerlevel9k_settings.sh
+
+
+# zsh-syntax-highlighting
+# From here, maybe interesting:
+# https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config#tony-lambiris-configuration
+#ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+#ZSH_HIGHLIGHT_PATTERNS+=("rm -rf *" "fg=white,bold,bg=red")
+#typeset -A ZSH_HIGHLIGHT_STYLES
+#ZSH_HIGHLIGHT_STYLES[path]="fg=white"
+#ZSH_HIGHLIGHT_STYLES[path_pathseparator]="fg=grey"
+#ZSH_HIGHLIGHT_STYLES[alias]="fg=cyan"
+#ZSH_HIGHLIGHT_STYLES[builtin]="fg=cyan"
+#ZSH_HIGHLIGHT_STYLES[function]="fg=cyan"
+#ZSH_HIGHLIGHT_STYLES[command]="fg=green"
+#ZSH_HIGHLIGHT_STYLES[precommand]="fg=green"
+#ZSH_HIGHLIGHT_STYLES[hashed-command]="fg=green"
+#ZSH_HIGHLIGHT_STYLES[commandseparator]="fg=yellow"
+#ZSH_HIGHLIGHT_STYLES[redirection]="fg=magenta"
+#ZSH_HIGHLIGHT_STYLES[bracket-level-1]="fg=cyan,bold"
+#ZSH_HIGHLIGHT_STYLES[bracket-level-2]="fg=green,bold"
+#ZSH_HIGHLIGHT_STYLES[bracket-level-3]="fg=magenta,bold"
+#ZSH_HIGHLIGHT_STYLES[bracket-level-4]="fg=yellow,bold"
