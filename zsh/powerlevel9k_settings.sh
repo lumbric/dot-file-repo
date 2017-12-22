@@ -1,6 +1,10 @@
 # https://github.com/tonylambiris/dotfiles
 # https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config#tony-lambiris-configuration
 
+# Requires nerdfonts, see here:
+# https://github.com/ryanoasis/nerd-fonts
+# https://powerline.readthedocs.io/en/latest/installation/linux.html#fonts-installation
+
 DEFAULT_FOREGROUND=006 DEFAULT_BACKGROUND=235
 DEFAULT_COLOR=$DEFAULT_FOREGROUND
 
