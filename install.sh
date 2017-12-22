@@ -86,7 +86,7 @@ SYMLINKS['.zshrc']="${REPOPATH}/zsh/.zshrc"
 SYMLINKS['.oh-my-zsh']="${REPOPATH}/zsh/oh-my-zsh"
 SYMLINKS['.oh-my-zsh']="${REPOPATH}/zsh/oh-my-zsh"
 
-SYMLINKS["${REPOPATH}/zsh/oh-my-zsh/custom/themes/powerlevel9k"]="${REPOPATH}/zsh/powerlevel9k"
+SYMLINKS[".dot-file-repo/zsh/oh-my-zsh/custom/themes/powerlevel9k"]="${REPOPATH}/zsh/powerlevel9k"
 SYMLINKS['.local/share/fonts/DroidSansMonoNerdFont.otf']="${REPOPATH}/zsh/DroidSansMonoNerdFont.otf"
 SYMLINKS['.config/fontconfig/conf.d/10-nerdfont-symbols.conf']="${REPOPATH}/zsh/10-nerdfont-symbols.conf"
 

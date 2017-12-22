@@ -8,6 +8,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="tjkirch"
 # Other interesting themes:    - PR 2013-12-21
 #
 #    tjkirch
