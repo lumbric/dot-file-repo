@@ -280,6 +280,10 @@ nnoremap <C-j> :cnext<CR>               " Next in quick fix list
 nnoremap <C-k> :cprevious<CR>           " Previous in quick fix list
 
 
+" insert current date and new line above and below
+nnoremap <leader>d :put =strftime('--- %Y ---')<CR>o<Esc>
+
+
 "" See also plugin config section ""
 
 
@@ -330,11 +334,6 @@ endif
 
 set number
 set ruler    " TODO what is this?
-
-"" http://askubuntu.com/questions/67/how-do-i-enable-full-color-support-in-vim
-"if $COLORTERM == 'gnome-terminal'
-"  set t_Co=256
-"endif
 
 "" Set font for gvim
 "set guifont=Inconsolata\ 10
