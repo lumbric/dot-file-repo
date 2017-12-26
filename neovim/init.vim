@@ -171,6 +171,8 @@ if has('clipboard')
     endif
 endif
 
+" Allow multiple paste without yank https://stackoverflow.com/a/7164121/859591
+xnoremap p pgvy
 
 "set autowrite                       " Automatically write a file when leaving a modified buffer
 
