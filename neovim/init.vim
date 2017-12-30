@@ -54,22 +54,21 @@ set nocompatible
 call plug#begin('~/.local/share/nvim/plugged')
 
 " General
-Plug 'tpope/vim-sensible'           " almost everything already here, might be removed in future
-                                    " See here https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
+Plug 'tpope/vim-sensible'              " almost everything already here, might be removed in future
+                                       " See here https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
 
 
 " Themes
 Plug 'freeo/vim-kalisi'                " Theme
-Plug 'jnurmine/Zenburn'             " theme used in old days (before 2016)
+Plug 'jnurmine/Zenburn'                " theme used in old days (before 2016)
 "Plug 'altercation/vim-colors-solarized'
-
 Plug 'vim-airline/vim-airline'
 
 
-
-" open files
-Plug 'ctrlpvim/ctrlp.vim'
+" Open and find files
 Plug 'scrooloose/nerdtree'
+Plug 'mhinz/vim-grepper'                " Search with ag, rg, grep etc for files
+Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'git://git.wincent.com/command-t.git'   " similar to CTRL+P
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }    " seems to be faster than CTRL+P!
 
@@ -80,7 +79,6 @@ Plug 'tpope/vim-fugitive'               " GIT integration
 Plug 'a.vim'                            " C/Cpp change between .c and .h files
 Plug 'scrooloose/nerdcommenter'         " comment out/in
 Plug 'tmhedberg/matchit'                " better match with %
-Plug 'mhinz/vim-grepper'                " Search with ag, rg, grep etc for files
 Plug 'bronson/vim-trailing-whitespace'  " Display (and fix) trailing white spaces
 
 
@@ -89,6 +87,10 @@ Plug 'python-mode/python-mode', {'branch': 'develop'}
 Plug 'sirtaj/vim-openscad'              " Syntax highlighting for open scad
 
 
+" Misc
+
+
+" TODO maybe interesting?
 "Plug 'Valloric/YouCompleteMe'          " autocompletion
 "Plug 'vim-scripts/indentpython.vim'    " helps to indent correctly
 "Plug 'scrooloose/syntastic'            "
@@ -108,12 +110,10 @@ Plug 'sirtaj/vim-openscad'              " Syntax highlighting for open scad
 "Plug 'Shougo/vimproc.vim'
 "Plug 'xolox/vim-misc'
 "Plug 'xolox/vim-session'
-
 "Plug 'Shougo/vimshell.vim'
 "Plug 'SirVer/ultisnips'
 "Plug 'FelikZ/ctrlp-py-matcher'
 "Plug 'honza/vim-snippets'
-"
 "Plug 'davidhalter/jedi-vim'
 
 call plug#end()
@@ -123,7 +123,7 @@ call plug#end()
 "" Basic Setup
 "*****************************************************************************
 set encoding=utf-8
-setlocal spell spelllang=en_us
+setlocal spell spelllang=en_us,de
 set spell
 
 set autoindent
@@ -284,7 +284,7 @@ nnoremap <C-k> :cprevious<CR>           " Previous in quick fix list
 
 
 " insert current date and new line above and below
-nnoremap <leader>d :put =strftime('--- %Y ---')<CR>o<Esc>
+nnoremap <leader>d :put =strftime('--- %Y-%m-%d ---')<CR>o<Esc>
 
 
 "" See also plugin config section ""
@@ -313,16 +313,10 @@ endif
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
-colorscheme zenburn
 
+" TODO why does setting background=dark after colorscheme affect colors?
+colorscheme zenburn
 "colorscheme kalisi
-"
-"if has('gui_running')
-"  set background=dark
-"  colorscheme solarized
-"else
-"  colorscheme zenburn
-"endif
 
 set background=dark
 
