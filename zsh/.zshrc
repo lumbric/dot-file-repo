@@ -7,6 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+# Note: needs to be loaded before oh-my-zsh.sh!
 ZSH_THEME="powerlevel9k/powerlevel9k"
 #ZSH_THEME="tjkirch"
 # Other interesting themes:    - PR 2013-12-21
@@ -151,6 +152,7 @@ if [ -e "${HOME}/.dot-file-repo/zsh/.zsh_aliases.local" ]; then
     source ~/.dot-file-repo/zsh/.zsh_aliases.local
 fi
 
+# for some reason this should be loaded after oh-my-zsh.sh
 source ~/.dot-file-repo/zsh/powerlevel9k_settings.sh
 
 # Fall back mode for powerlevel9k when SSH-ing to server with dot-file-repo and
