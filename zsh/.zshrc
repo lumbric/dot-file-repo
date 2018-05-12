@@ -13,15 +13,15 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Other interesting themes:    - PR 2013-12-21
 #
 #    tjkirch
-#    dst                
-#    rkj-repos          
-#    smt                
-#    tjkirch            
-#    tonotdo            
-#    bira               
-#    gnzh               
-#    re5et              
-#    xiong-chiamiov     
+#    dst
+#    rkj-repos
+#    smt
+#    tjkirch
+#    tonotdo
+#    bira
+#    gnzh
+#    re5et
+#    xiong-chiamiov
 
 
 # Set to this to use case-sensitive completion
