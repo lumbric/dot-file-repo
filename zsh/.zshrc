@@ -23,6 +23,18 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 #    re5et
 #    xiong-chiamiov
 
+# for some reason this should be loaded before oh-my-zsh.sh
+source ~/.dot-file-repo/zsh/powerlevel9k_settings.sh
+
+# Fall back mode for powerlevel9k when SSH-ing to server with dot-file-repo and
+# powerlevel9k installed, but dot-file-repo and fonts not available on client.
+if [ -z $SSH_CLIENT ]; then
+    # this env variable will be available only if this .zshrc is used on client
+    export LC_CLIENT_HAS_DOT_FILE_REPO=1
+fi
+if [ -z $LC_CLIENT_HAS_DOT_FILE_REPO ]; then
+    source ~/.dot-file-repo/zsh/powerlevel9k_settings_no_font_fallback.sh
+fi
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -151,20 +163,6 @@ source ~/.dot-file-repo/zsh/.aliases
 if [ -e "${HOME}/.dot-file-repo/zsh/.zsh_aliases.local" ]; then
     source ~/.dot-file-repo/zsh/.zsh_aliases.local
 fi
-
-# for some reason this should be loaded after oh-my-zsh.sh
-source ~/.dot-file-repo/zsh/powerlevel9k_settings.sh
-
-# Fall back mode for powerlevel9k when SSH-ing to server with dot-file-repo and
-# powerlevel9k installed, but dot-file-repo and fonts not available on client.
-if [ -z $SSH_CLIENT ]; then
-    # this env variable will be available only if this .zshrc is used on client
-    export LC_CLIENT_HAS_DOT_FILE_REPO=1
-fi
-if [ -z $LC_CLIENT_HAS_DOT_FILE_REPO ]; then
-    source ~/.dot-file-repo/zsh/powerlevel9k_settings_no_font_fallback.sh
-fi
-
 
 # zsh-syntax-highlighting
 # From here, maybe interesting:
