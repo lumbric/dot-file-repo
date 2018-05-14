@@ -262,6 +262,9 @@ vmap > >gv
 " from http://www.pixelbeat.org/vim.tips.html
 nnoremap x "_x
 
+" Automatically copy to clipboard after select
+" Does not work in neovim... https://github.com/neovim/neovim/issues/2325
+vmap <LeftRelease> "*ygv
 
 "This unsets the 'last search pattern' register by hitting return
 nnoremap <CR> :noh<CR><CR>
@@ -284,7 +287,7 @@ nnoremap <C-k> :cprevious<CR>           " Previous in quick fix list
 
 
 " insert current date and new line above and below
-nnoremap <leader>d :put =strftime('--- %Y-%m-%d ---')<CR>o<Esc>
+nnoremap <leader>d :put =strftime('--- %Y-%m-%d ---')<CR><Esc>
 
 
 "" See also plugin config section ""
