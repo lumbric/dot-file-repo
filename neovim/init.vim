@@ -63,6 +63,7 @@ Plug 'freeo/vim-kalisi'                " Theme
 Plug 'jnurmine/Zenburn'                " theme used in old days (before 2016)
 "Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
+"Plug 'itchyny/lightline.vim'          " Alternative to vim-airline
 
 
 " Open and find files
@@ -80,7 +81,7 @@ Plug 'a.vim'                            " C/Cpp change between .c and .h files
 Plug 'scrooloose/nerdcommenter'         " comment out/in
 Plug 'tmhedberg/matchit'                " better match with %
 Plug 'bronson/vim-trailing-whitespace'  " Display (and fix) trailing white spaces
-
+"Plug 'w0rp/ale'                        " asynchronous linting, only vim >8.0, neovim
 
 " Programming languages
 Plug 'python-mode/python-mode', {'branch': 'develop'}
