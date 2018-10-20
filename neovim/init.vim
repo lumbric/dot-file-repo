@@ -77,7 +77,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 " General programming helpers
 Plug 'tpope/vim-surround'               " surround text with parentheses
 Plug 'tpope/vim-fugitive'               " GIT integration
-Plug 'a.vim'                            " C/Cpp change between .c and .h files
+Plug 'vim-scripts/a.vim'                " C/Cpp change between .c and .h files
 Plug 'scrooloose/nerdcommenter'         " comment out/in
 Plug 'tmhedberg/matchit'                " better match with %
 Plug 'bronson/vim-trailing-whitespace'  " Display (and fix) trailing white spaces
