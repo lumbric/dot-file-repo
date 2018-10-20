@@ -359,9 +359,6 @@ filetype plugin indent on   " Automatically detect file types.
 "    \ set autoindent
 "    \ set fileformat=unix
 
-" otherwise VIM is unusable for py files in large folders like home
-let g:pymode_rope = 0
-
 " Flag bad whitespaces
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
@@ -399,12 +396,16 @@ set wildignore+=*.so,*.swp,*build*/*     " Excluding build directory, very impor
 
 
 """" Pymode
+let g:pymode_python = 'python3'
 let g:pymode_folding = 0
 let g:pymode_lint_cwindow = 0     " Disbale Auto open cwindow (quickfix)
                                   " if errors have been found
 "let g:pymode_lint_write = 0      " Disable pymode checking on write
 "
 set completeopt=longest,menuone   " do not open docs on autocomplete
+
+" otherwise VIM is unusable for py files in large folders like home
+let g:pymode_rope = 0
 
 
 """" Airline
