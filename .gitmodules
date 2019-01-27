@@ -67,3 +67,9 @@
 [submodule "neovim/plugged/vim-signify"]
 	path = neovim/plugged/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
+[submodule "neovim/plugged/vim-autoclose"]
+	path = neovim/plugged/vim-autoclose
+	url = https://github.com/Townk/vim-autoclose.git
+[submodule "neovim/plugged/fzf.vim"]
+	path = neovim/plugged/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git

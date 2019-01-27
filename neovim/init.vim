@@ -75,13 +75,15 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 
 " General programming helpers
-Plug 'tpope/vim-surround'               " surround text with parentheses
 Plug 'tpope/vim-fugitive'               " GIT integration
 Plug 'mhinz/vim-signify'                " Git/mercurial/others diff icons on the side of the file lines
 Plug 'vim-scripts/a.vim'                " C/Cpp change between .c and .h files
 Plug 'scrooloose/nerdcommenter'         " comment out/in
 Plug 'tmhedberg/matchit'                " better match with %
+Plug 'tpope/vim-surround'               " surround text with parentheses
+Plug 'Townk/vim-autoclose'              " Automatically close parenthesis, etc
 Plug 'bronson/vim-trailing-whitespace'  " Display (and fix) trailing white spaces
+
 "Plug 'w0rp/ale'                        " asynchronous linting, only vim >8.0, neovim
 Plug 'davidhalter/jedi-vim'             " only for python go-to-definition, autocompletion is disabled
 
@@ -127,7 +129,6 @@ Plug 'sirtaj/vim-openscad'              " Syntax highlighting for open scad
 "Plug 'vim-scripts/IndexedSearch'        " Search results counter
 "Plug 'fisadev/fisa-vim-colorscheme'     " Terminal Vim with 256 colors colorscheme
 "Plug 'fisadev/FixedTaskList.vim'        " Pending tasks list
-"Plug 'Townk/vim-autoclose'              " Automatically close parenthesis, etc
 "Plug 'michaeljsmith/vim-indent-object'  " Indent text object
 "Plug 'jeetsukumaran/vim-indentwise'     " Indentation based movements
 "Plug 'lilydjwg/colorizer'               " Paint css colors with the real color
@@ -497,7 +498,7 @@ highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
 highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 
 
-""" Grepper
+"""" Grepper
 " see also mappings for quickfix list above
 let g:grepper = {}
 let g:grepper.tools = ['rg', 'git', 'ag', 'grep']
@@ -505,3 +506,10 @@ let g:grepper.dir = 'repo,file'
 let g:grepper.simple_prompt = 1
 let g:grepper.highlight = 1
 nnoremap <leader>gg :Grepper<cr>
+
+
+"""" Autoclose
+" Fix to let ESC work as espected with Autoclose plugin
+" (without this, when showing an autocompletion window, ESC won't leave insert
+"  mode)
+let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
