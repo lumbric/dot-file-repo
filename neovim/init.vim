@@ -363,6 +363,9 @@ set ruler    " TODO what is this?
 "" Remove icons from gvim
 "set guioptions-=T
 
+" needed so deoplete can auto select the first suggestion
+set completeopt+=noinsert
+
 
 "*****************************************************************************
 "" File types
@@ -370,7 +373,7 @@ set ruler    " TODO what is this?
 filetype plugin indent on   " Automatically detect file types.
 
 " Python
-" TODO this does not seem to be necessary...
+" already set above, see set tw, st, ..
 "au BufNewFile,BufRead *.py
 "    \ set tabstop=4
 "    \ set softtabstop=4
@@ -408,7 +411,7 @@ au FileType gitcommit set tw=72
 """" ctrlp.vim
 "set wildmode=list:longest,list:full
 "set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-set wildignore+=*.so,*.swp,*build*/*     " Excluding build directory, very important!
+"set wildignore+=*.so,*.swp,*build*/*     " Excluding build directory, very important!
 "let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|tox|ico|git|hg|svn))$'
 "let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
 "let g:ctrlp_use_caching = 1
@@ -422,7 +425,7 @@ let g:pymode_folding = 0
 let g:pymode_lint_cwindow = 0     " Disbale Auto open cwindow (quickfix)
                                   " if errors have been found
 "let g:pymode_lint_write = 0      " Disable pymode checking on write
-"
+
 set completeopt=longest,menuone   " do not open docs on autocomplete
 
 " otherwise VIM is unusable for py files in large folders like home
