@@ -77,11 +77,19 @@ Plug 'ctrlpvim/ctrlp.vim'
 " General programming helpers
 Plug 'tpope/vim-surround'               " surround text with parentheses
 Plug 'tpope/vim-fugitive'               " GIT integration
+Plug 'mhinz/vim-signify'                " Git/mercurial/others diff icons on the side of the file lines
 Plug 'vim-scripts/a.vim'                " C/Cpp change between .c and .h files
 Plug 'scrooloose/nerdcommenter'         " comment out/in
 Plug 'tmhedberg/matchit'                " better match with %
 Plug 'bronson/vim-trailing-whitespace'  " Display (and fix) trailing white spaces
 "Plug 'w0rp/ale'                        " asynchronous linting, only vim >8.0, neovim
+Plug 'davidhalter/jedi-vim'             " only for python go-to-definition, autocompletion is disabled
+
+" Async autocompletion
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
+
 
 " Programming languages
 Plug 'python-mode/python-mode', {'branch': 'develop'}
@@ -408,6 +416,23 @@ set completeopt=longest,menuone   " do not open docs on autocomplete
 let g:pymode_rope = 0
 
 
+"""" Deoplete
+let g:deoplete#enable_at_startup = 1
+
+
+"""" Jedi
+" Disable autocompletion (using deoplete instead)
+let g:jedi#completions_enabled = 0
+
+" All these mappings work only for python code:
+let g:jedi#goto_command = ',g'                  " Go to definition
+let g:jedi#usages_command = ',o'                " Find ocurrences
+let g:jedi#goto_assignments_command = ',a'      " Find assignments
+"
+" Go to definition in new tab
+nmap ,D :tab split<CR>:call jedi#goto()<CR>
+
+
 """" Airline
 " no idea why this is necessary in VIM and not in nvim...
 " See also: https://github.com/vim-airline/vim-airline/issues/130
@@ -424,7 +449,7 @@ let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$',
 let g:nerdtree_tabs_open_on_gui_startup=0
 
 
-""" Fugitive (GIT)
+"""" Fugitive (GIT)
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
@@ -437,6 +462,23 @@ nnoremap <silent> <leader>ge :Gedit<CR>
 " Mnemonic _i_nteractive
 nnoremap <silent> <leader>gi :Git add -p %<CR>
 nnoremap <silent> <leader>gg :SignifyToggle<CR>
+
+
+"""" Signify
+
+" this first setting decides in which order try to guess your current vcs
+" UPDATE it to reflect your preferences, it will speed up opening files
+let g:signify_vcs_list = [ 'git']
+" mappings to jump to changed blocks
+nmap <leader>sn <plug>(signify-next-hunk)
+nmap <leader>sp <plug>(signify-prev-hunk)
+" nicer colors
+highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
+highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
+highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
+highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=119
+highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
+highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 
 
 """ Grepper
