@@ -36,6 +36,7 @@
 "   - https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
 "   - https://github.com/vim/vim/blob/master/runtime/defaults.vim
 "   - https://github.com/spf13/spf13-vim
+"   - https://github.com/fisadev/fisa-nvim-config/
 
 
 " Stupid color theme workaround for VIM...
@@ -56,7 +57,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 " General
 Plug 'tpope/vim-sensible'              " almost everything already here, might be removed in future
                                        " See here https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
-
 
 " Themes
 Plug 'freeo/vim-kalisi'                " Theme
@@ -115,7 +115,6 @@ Plug 'sirtaj/vim-openscad'              " Syntax highlighting for open scad
 "Plug 'majutsushi/tagbar'
 "Plug 'Yggdroot/indentLine'
 "Plug 'avelino/vim-bootstrap-updater'
-"Plug 'sheerun/vim-polyglot'
 "Plug 'Shougo/vimproc.vim'
 "Plug 'xolox/vim-misc'
 "Plug 'xolox/vim-session'
@@ -123,7 +122,21 @@ Plug 'sirtaj/vim-openscad'              " Syntax highlighting for open scad
 "Plug 'SirVer/ultisnips'
 "Plug 'FelikZ/ctrlp-py-matcher'
 "Plug 'honza/vim-snippets'
-"Plug 'davidhalter/jedi-vim'
+"Plug 'sheerun/vim-polyglot'             " better syntax highlighting?
+"Plug 'arielrossanigo/dir-configs-override.vim' " Override configs by directory
+"Plug 'vim-scripts/IndexedSearch'        " Search results counter
+"Plug 'fisadev/fisa-vim-colorscheme'     " Terminal Vim with 256 colors colorscheme
+"Plug 'fisadev/FixedTaskList.vim'        " Pending tasks list
+"Plug 'Townk/vim-autoclose'              " Automatically close parenthesis, etc
+"Plug 'michaeljsmith/vim-indent-object'  " Indent text object
+"Plug 'jeetsukumaran/vim-indentwise'     " Indentation based movements
+"Plug 'lilydjwg/colorizer'               " Paint css colors with the real color
+"Plug 't9md/vim-choosewin'               " Window chooser
+"Plug 'valloric/MatchTagAlways'          " Highlight matching html tags
+"Plug 'mattn/emmet-vim'                  " Generate html in a simple way
+"Plug 'vim-scripts/YankRing.vim'         " Yank history navigation
+"Plug 'neomake/neomake'                  " Linters
+
 
 call plug#end()
 

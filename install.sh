@@ -22,7 +22,7 @@
 #   git clone --recursive https://github.com/lumbric/dot-file-repo.git .dot-file-repo
 #   bash
 #   ./.dot-file-repo/install.sh
-#   
+#
 # Then open vim and run :PlugInstall or :PlugUpdate.
 #
 # You can run this script later at any time to update symlinks or config
@@ -31,16 +31,18 @@
 #
 # Dependencies:
 #   zsh, bash, git, vim, neovim
+#   for vim: yapf3 yapf pep8 python3-autopep8 (is this really used?)
 #
 # Recommended:
 #   ack-grep and on Ubuntu:  sudo ln -s /usr/bin/ack-grep /usr/bin/ack
+#   or use ripgrep: apt install ripgrep
 #
 # TODO:
 #  - vim
 #       - org mode equivalent for lists?
 #       - easily change lang or disable spell? (remember for files?)
 #       - profile startup time
-#       - autoreload
+#       - autoreload file on change
 #       - interesting plugin? https://github.com/tpope/vim-unimpaired
 #       - display wrong white spaces
 #       - jedi?
@@ -49,7 +51,6 @@
 #       - make command
 #       - command for uploading to esp8266
 #       - configure airline status bar
-#       - GIT? display changed lines?
 #  - git
 #       - hook template folder (should be merged with default hooks)
 #  - zsh
@@ -69,6 +70,7 @@
 #  - roxterm
 #  - awesome
 #  - htop config?
+#  - mocp
 #
 
 declare -A SYMLINKS   # requires bash >= 4
