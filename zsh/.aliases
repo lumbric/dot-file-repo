@@ -44,3 +44,6 @@ findname_func(){
 }
 
 alias 'findname'=findname_func
+
+alias t=timew
+alias p3=ipython3
