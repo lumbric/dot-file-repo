@@ -1,7 +1,11 @@
 #!/bin/bash
 
-# Add new VIM plugins as submodules 
+# Add new VIM plugins as submodules
 # Run :PlugInstall in vim or neovim, then run this script and then git commit.
+#
+# Hint: this script is actually not really necessary, just do a:
+#    git add path/to/submodule  # no trailing slash here, important!
+# https://stackoverflow.com/a/1597322/859591
 
 root_path=$(dirname $0)/neovim/plugged/
 
