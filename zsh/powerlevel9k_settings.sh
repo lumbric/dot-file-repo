@@ -53,9 +53,14 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 #POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 #POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{008}> %f"
 
-# maybe add anaconda pyenv?
+
+POWERLEVEL9K_ANACONDA_LEFT_DELIMITER=""
+POWERLEVEL9K_ANACONDA_RIGHT_DELIMITER=""
+POWERLEVEL9K_PYTHON_ICON=""
+
+# maybe add pyenv?
 # how about docker_machine?
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator ssh context dir_writable dir vcs virtualenv)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator ssh context dir_writable dir vcs anaconda virtualenv)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time background_jobs status time)
 
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND="green"
