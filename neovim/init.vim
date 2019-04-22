@@ -61,6 +61,7 @@ Plug 'tpope/vim-sensible'              " almost everything already here, might b
 " Themes
 Plug 'freeo/vim-kalisi'                " Theme
 Plug 'jnurmine/Zenburn'                " theme used in old days (before 2016)
+"Plug 'vim-scripts/proton'             " theme with light background
 "Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 "Plug 'itchyny/lightline.vim'          " Alternative to vim-airline
@@ -341,8 +342,8 @@ endif
 "*****************************************************************************
 
 " TODO why does setting background=dark after colorscheme affect colors?
-colorscheme zenburn
-"colorscheme kalisi
+"colorscheme zenburn
+colorscheme kalisi
 
 set background=dark
 
