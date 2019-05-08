@@ -342,10 +342,13 @@ endif
 "*****************************************************************************
 
 " TODO why does setting background=dark after colorscheme affect colors?
+set background=dark
+
 "colorscheme zenburn
 colorscheme kalisi
 
-set background=dark
+" Fix weird parenthesis highlighting for kalisi
+highlight MatchParen cterm=bold ctermfg=145 ctermbg=236 gui=bold guifg=#b2b2a0 guibg=#2e2e2e
 
 " Highlight color for misspelled words
 " this line is necessary for many colorthemes, but not for zenburn!
