@@ -63,7 +63,7 @@ Plug 'freeo/vim-kalisi'                " Theme
 Plug 'jnurmine/Zenburn'                " theme used in old days (before 2016)
 "Plug 'vim-scripts/proton'             " theme with light background
 "Plug 'altercation/vim-colors-solarized'
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'         " advanced status line, like powerline but more lightweight
 "Plug 'itchyny/lightline.vim'          " Alternative to vim-airline
 
 
@@ -348,7 +348,9 @@ set background=dark
 colorscheme kalisi
 
 " Fix weird parenthesis highlighting for kalisi
-highlight MatchParen cterm=bold ctermfg=145 ctermbg=236 gui=bold guifg=#b2b2a0 guibg=#2e2e2e
+"highlight MatchParen cterm=bold ctermfg=145 ctermbg=236 gui=bold guifg=#b2b2a0 guibg=#2e2e2e  " not colorful
+"highlight MatchParen cterm=bold ctermfg=16 ctermbg=148 gui=bold guifg=#000000 guibg=#b8ea00   " original
+highlight MatchParen cterm=bold ctermfg=148  ctermbg=236 gui=bold guifg=#000000 guibg=#b8ea00  " original inverted
 
 " Highlight color for misspelled words
 " this line is necessary for many colorthemes, but not for zenburn!
