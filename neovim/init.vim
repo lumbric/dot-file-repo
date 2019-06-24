@@ -155,27 +155,26 @@ set backspace=indent,eol,start
 set complete-=i
 set smarttab
 
-set nrformats-=octal             " what is this?
+set nrformats-=octal                  " what is this?
 
-
-"set mousemodel=popup            " TODO what is this?
+"set mousemodel=popup                 " TODO what is this?
 "
 " better copy & paste with mouse
 if has('mouse')
     set mouse=a
 endif
 
-set hlsearch                     " Highlight when searching
-"set backspace=indent,eol,start   " Fix backspace indent  <-- TODO what is this?
+set hlsearch                          " Highlight when searching
+"set backspace=indent,eol,start       " Fix backspace indent  <-- TODO what is this?
 
-set ignorecase                   " search case insensitive
+set ignorecase                        " search case insensitive
 
-set nofoldenable                 " Open files unfolded...
+set nofoldenable                      " Open files unfolded...
 "set foldlevel=99
 
-set wildmenu                     " display completion matches in a status line
+set wildmenu                          " display completion matches in a status line
 
-set tw=79 ts=4 sw=4 sta et sts=4 ai   " set width...
+set tw=99 ts=4 sw=4 sta et sts=4 ai   " set width...  (tw=79 according to pep8)
 
 " http://vim.wikia.com/wiki/Restoring_indent_after_typing_hash
 " don't unindent line completely when typing hash --> important for openscad
@@ -350,12 +349,15 @@ colorscheme kalisi
 " Fix weird parenthesis highlighting for kalisi
 "highlight MatchParen cterm=bold ctermfg=145 ctermbg=236 gui=bold guifg=#b2b2a0 guibg=#2e2e2e  " not colorful
 "highlight MatchParen cterm=bold ctermfg=16 ctermbg=148 gui=bold guifg=#000000 guibg=#b8ea00   " original
-highlight MatchParen cterm=bold ctermfg=148  ctermbg=236 gui=bold guifg=#000000 guibg=#b8ea00  " original inverted
+highlight MatchParen cterm=bold ctermfg=148  ctermbg=236 gui=bold guifg=#000000 guibg=#2e2e2e  " original inverted
 
 " Highlight color for misspelled words
 " this line is necessary for many colorthemes, but not for zenburn!
 "highlight SpellBad term=standout term=underline ctermbg=8 ctermfg=1 cterm=NONE
 "highlight SpellBad term=standout term=underline ctermbg=0 ctermfg=1 cterm=underline
+
+" line for textwidth
+highlight ColorColumn ctermbg=236 guibg=#2e2e2e
 
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
@@ -389,6 +391,10 @@ filetype plugin indent on   " Automatically detect file types.
 "    \ set expandtab
 "    \ set autoindent
 "    \ set fileformat=unix
+
+" Does not work for some reason otherwise if not set again for *.py explicitly...
+au BufNewFile,BufRead *.py
+            \ set textwidth=99
 
 " Flag bad whitespaces
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
