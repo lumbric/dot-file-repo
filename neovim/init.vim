@@ -373,7 +373,9 @@ set ruler    " TODO what is this?
 "set guioptions-=T
 
 " needed so deoplete can auto select the first suggestion
-set completeopt+=noinsert
+if has('nvim')
+    set completeopt+=noinsert
+endif
 
 
 "*****************************************************************************
