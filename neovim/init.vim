@@ -450,6 +450,11 @@ let g:pymode_rope = 0
 """" Deoplete
 let g:deoplete#enable_at_startup = 1
 
+" Path to Python 3 interpreter. Setting this makes startup faster. Also useful
+" for working with virtualenvs.
+let g:python_host_prog  = '/usr/bin/python'	  " Python 2
+let g:python3_host_prog = '/usr/bin/python3'  " Python 3
+
 
 """" Jedi
 " Disable autocompletion (using deoplete instead)
