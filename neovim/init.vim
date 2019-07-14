@@ -89,7 +89,7 @@ Plug 'bronson/vim-trailing-whitespace'  " Display (and fix) trailing white space
 Plug 'davidhalter/jedi-vim'             " only for python go-to-definition, autocompletion is disabled
 
 " Async autocompletion
-if has('nvim')
+if has('nvim-0.3')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
 
