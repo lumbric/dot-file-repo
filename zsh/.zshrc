@@ -65,6 +65,11 @@ plugins=(git sudo jump pip colored-man)
 # wanna have more? used at IMS in the past
 #plugins=(git svn systemd sudo jump pip colored-man common-aliases dircycle dirhistory)
 
+# Conda tab completion
+fpath+=~/.dot-file-repo/zsh/conda-zsh-completion/
+zstyle ':completion::complete:*' use-cache 1
+zstyle ":conda_zsh_completion:*" use-groups true
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
