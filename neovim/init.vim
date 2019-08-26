@@ -384,7 +384,7 @@ endif
 filetype plugin indent on   " Automatically detect file types.
 
 " Python
-" already set above, see set tw, st, ..
+" already set above and by pymode!, see set tw, st, ..
 "au BufNewFile,BufRead *.py
 "    \ set tabstop=4
 "    \ set softtabstop=4
@@ -394,9 +394,6 @@ filetype plugin indent on   " Automatically detect file types.
 "    \ set autoindent
 "    \ set fileformat=unix
 
-" Does not work for some reason otherwise if not set again for *.py explicitly...
-au BufNewFile,BufRead *.py
-            \ set textwidth=99
 
 " Flag bad whitespaces
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -437,6 +434,7 @@ au FileType gitcommit set tw=72
 """" Pymode
 let g:pymode_python = 'python3'
 let g:pymode_folding = 0
+let g:pymode_options_max_line_length = 99   " sets also colorbar
 let g:pymode_lint_cwindow = 0     " Disbale Auto open cwindow (quickfix)
                                   " if errors have been found
 "let g:pymode_lint_write = 0      " Disable pymode checking on write
