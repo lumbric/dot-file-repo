@@ -100,6 +100,7 @@ Plug 'sirtaj/vim-openscad'              " Syntax highlighting for open scad
 
 
 " Misc
+Plug 'lambdalisue/suda.vim'             " Save open file as sudo
 
 
 " TODO maybe interesting?
@@ -335,6 +336,10 @@ endif
 "    set grepformat=%f:%l:%c:%m
 "endif
 
+" Save file as root
+" From https://unix.stackexchange.com/a/23615/9023
+" NOTE: Does not work in Neovim, use suda plugin!
+cmap w!! %!sudo tee > /dev/null %
 
 "*****************************************************************************
 "" Visual Settings
@@ -530,3 +535,7 @@ nnoremap <leader>gg :Grepper<cr>
 " (without this, when showing an autocompletion window, ESC won't leave insert
 "  mode)
 let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
+
+
+"""" Suda
+let g:suda_smart_edit = 1
