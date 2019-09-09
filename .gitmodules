@@ -76,3 +76,6 @@
 [submodule "zsh/conda-zsh-completion"]
 	path = zsh/conda-zsh-completion
 	url = https://github.com/esc/conda-zsh-completion
+[submodule "neovim/plugged/suda.vim"]
+	path = neovim/plugged/suda.vim
+	url = https://github.com/lambdalisue/suda.vim.git
