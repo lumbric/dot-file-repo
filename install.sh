@@ -96,6 +96,7 @@ SYMLINKS['.config/nvim/init.vim']="${REPOPATH}/neovim/init.vim"
 SYMLINKS['.local/share/nvim/site/autoload/plug.vim']="${REPOPATH}/neovim/vim-plug/plug.vim"
 SYMLINKS['.local/share/nvim/plugged']="${REPOPATH}/neovim/plugged"
 
+SYMLINKS['.condarc']="${REPOPATH}/conda/.condarc"
 
 # VIM fallback...
 SYMLINKS['.vim']="${HOME}/.local/share/nvim/site"
