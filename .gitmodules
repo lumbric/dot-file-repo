@@ -79,3 +79,15 @@
 [submodule "neovim/plugged/suda.vim"]
 	path = neovim/plugged/suda.vim
 	url = https://github.com/lambdalisue/suda.vim.git
+[submodule "neovim/plugged/vim-colors-xcode"]
+	path = neovim/plugged/vim-colors-xcode
+	url = https://github.com/arzg/vim-colors-xcode.git
+[submodule "neovim/plugged/xcode-vim"]
+	path = neovim/plugged/xcode-vim
+	url = https://github.com/JaySandhu/xcode-vim.git
+[submodule "neovim/plugged/vimroom"]
+	path = neovim/plugged/vimroom
+	url = https://github.com/mikewest/vimroom.git
+[submodule "neovim/plugged/presenting.vim"]
+	path = neovim/plugged/presenting.vim
+	url = https://github.com/sotte/presenting.vim.git
