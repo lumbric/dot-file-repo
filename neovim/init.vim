@@ -61,10 +61,13 @@ Plug 'tpope/vim-sensible'              " almost everything already here, might b
 " Themes
 Plug 'freeo/vim-kalisi'                " Theme
 Plug 'jnurmine/Zenburn'                " theme used in old days (before 2016)
+Plug 'JaySandhu/xcode-vim'             " light high contrast
+Plug 'arzg/vim-colors-xcode'           " light high contrast
 "Plug 'vim-scripts/proton'             " theme with light background
 "Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'         " advanced status line, like powerline but more lightweight
 "Plug 'itchyny/lightline.vim'          " Alternative to vim-airline
+Plug 'mikewest/vimroom'
 
 
 " Open and find files
@@ -102,6 +105,8 @@ Plug 'sirtaj/vim-openscad'              " Syntax highlighting for open scad
 " Misc
 Plug 'lambdalisue/suda.vim'             " Save open file as sudo
 
+Plug 'sotte/presenting.vim'             " Powerpoint for VIM
+
 
 " TODO maybe interesting?
 "Plug 'Valloric/YouCompleteMe'          " autocompletion
@@ -110,7 +115,6 @@ Plug 'lambdalisue/suda.vim'             " Save open file as sudo
 "Plug 'nvie/vim-flake8'                 " pep8 checker
 
 "Plug 'jistr/vim-nerdtree-tabs'
-"Plug 'vim-airline/vim-airline-themes'
 "Plug 'airblade/vim-gitgutter'
 "Plug 'vim-scripts/grep.vim'
 "Plug 'vim-scripts/CSApprox'
@@ -311,7 +315,7 @@ nnoremap <C-k> :cprevious<CR>           " Previous in quick fix list
 
 
 " insert current date and new line above and below
-nnoremap <leader>d :put =strftime('--- %Y-%m-%d ---')<CR><Esc>
+nnoremap <leader>d :put =strftime('--- %Y-%m-%d %H:%M---')<CR><Esc>
 
 
 "" See also plugin config section ""
@@ -539,3 +543,15 @@ let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
 
 """" Suda
 let g:suda_smart_edit = 1
+
+
+"""" Vimroom
+" default maped to <leader>V
+"nnoremap <silent> <Leader>V <Plug>VimroomToggle
+let g:vimroom_width=99
+let g:vimroom_sidebar_height=0
+let g:vimroom_scrolloff=10
+
+
+"""" Presenting
+:let g:presenting_top_margin = 2
