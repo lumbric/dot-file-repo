@@ -91,3 +91,6 @@
 [submodule "neovim/plugged/presenting.vim"]
 	path = neovim/plugged/presenting.vim
 	url = https://github.com/sotte/presenting.vim.git
+[submodule "neovim/plugged/black"]
+	path = neovim/plugged/black
+	url = https://github.com/psf/black.git

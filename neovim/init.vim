@@ -87,6 +87,7 @@ Plug 'tmhedberg/matchit'                " better match with %
 Plug 'tpope/vim-surround'               " surround text with parentheses
 Plug 'Townk/vim-autoclose'              " Automatically close parenthesis, etc
 Plug 'bronson/vim-trailing-whitespace'  " Display (and fix) trailing white spaces
+Plug 'psf/black', { 'branch': 'stable' }
 
 "Plug 'w0rp/ale'                        " asynchronous linting, only vim >8.0, neovim
 Plug 'davidhalter/jedi-vim'             " only for python go-to-definition, autocompletion is disabled
@@ -555,3 +556,8 @@ let g:vimroom_scrolloff=10
 
 """" Presenting
 :let g:presenting_top_margin = 2
+
+
+"""" Black
+let g:black_linelength = 99
+autocmd BufWritePre /home/peter/reFUEL/windpower-decomposition-usa/*.py execute ':Black'
