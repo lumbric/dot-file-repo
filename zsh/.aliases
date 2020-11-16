@@ -46,4 +46,8 @@ findname_func(){
 alias 'findname'=findname_func
 
 alias t=timew
-alias p3=ipython3
+
+#alias p3=ipython3
+alias p3='PYTHONSTARTUP=~/.dot-file-repo/ipython/startup.py ipython3'
+
+alias o='xdg-open'
