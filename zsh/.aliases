@@ -51,3 +51,6 @@ alias t=timew
 alias p3='PYTHONSTARTUP=~/.dot-file-repo/ipython/startup.py ipython3'
 
 alias o='xdg-open'
+
+
+alias weather='curl "wttr.in/Wien?format=v2" -s | grep -v igor_chub'
