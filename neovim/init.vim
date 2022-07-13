@@ -87,7 +87,7 @@ Plug 'tmhedberg/matchit'                " better match with %
 Plug 'tpope/vim-surround'               " surround text with parentheses
 Plug 'Townk/vim-autoclose'              " Automatically close parenthesis, etc
 Plug 'bronson/vim-trailing-whitespace'  " Display (and fix) trailing white spaces
-Plug 'psf/black', { 'branch': 'stable' }
+Plug 'psf/black', { 'tag': '22.3.0' }
 
 "Plug 'w0rp/ale'                        " asynchronous linting, only vim >8.0, neovim
 Plug 'davidhalter/jedi-vim'             " only for python go-to-definition, autocompletion is disabled
