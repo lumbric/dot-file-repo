@@ -32,8 +32,11 @@ alias 'gdc'='git diff --cached'
 alias 'gb'='git branch'
 alias 'gg'='git grep'
 alias 'gl'='git log --decorate --graph --all --stat --pretty=fuller'
-alias 'gitk'='gitk --all'
 
+# Resetting $PATH is a workaround for starting gitk in a conda environment:
+# hopefully this folder is good enough for PATH in all situations.
+# https://stackoverflow.com/q/48786593/859591
+alias 'gitk'='PATH=/usr/bin gitk --all'
 
 
 # colorful diff...
