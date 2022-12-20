@@ -206,6 +206,10 @@ xnoremap p pgvy
 
 "set autowrite                       " Automatically write a file when leaving a modified buffer
 
+" otherwise super dangerous according to Jakob
+" https://github.com/neovim/neovim/issues/9888#issuecomment-482576387
+set fsync
+
 " more undo - copied from spf13
 set undofile                " So is persistent undo ...
 set undolevels=1000         " Maximum number of changes that can be undone
