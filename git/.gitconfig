@@ -12,6 +12,7 @@
     tool = meld
 [mergetool]
 	keepBackup = false
+	prompt = false
 [color]
     ui = true
 [include]
@@ -25,3 +26,23 @@
 	editor = vim
 [commit]
 	verbose = True
+[difftool]
+	prompt = false
+
+# config below here is probably not always relevant, but should not hurt either
+[diff "jupyternotebook"]
+	command = git-nbdiffdriver diff
+[merge "jupyternotebook"]
+	driver = git-nbmergedriver merge %O %A %B %L %P
+	name = jupyter notebook merge driver
+[difftool "nbdime"]
+	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+[difftool]
+	prompt = false
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
