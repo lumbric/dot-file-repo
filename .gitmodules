@@ -94,3 +94,6 @@
 [submodule "neovim/plugged/black"]
 	path = neovim/plugged/black
 	url = https://github.com/psf/black.git
+[submodule "neovim/plugged/vimtex"]
+	path = neovim/plugged/vimtex
+	url = https://github.com/lervag/vimtex.git

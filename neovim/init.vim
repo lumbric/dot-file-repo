@@ -101,6 +101,7 @@ endif
 " Programming languages
 Plug 'python-mode/python-mode', {'branch': 'develop'}
 Plug 'sirtaj/vim-openscad'              " Syntax highlighting for open scad
+Plug 'lervag/vimtex'
 
 
 " Misc
@@ -565,3 +566,15 @@ let g:vimroom_scrolloff=10
 """" Black
 let g:black_linelength = 99
 autocmd BufWritePre /home/peter/reFUEL/windpower-decomposition-usa/*.py execute ':Black'
+
+
+let g:vimtex_compiler_latexmk_engines='pdflatex'
+let g:vimtex_view_method='zathura'
+
+" https://gist.github.com/vext01/16df5bd48019d451e078
+function! Synctex()
+  " remove 'silent' for debugging
+  execute "silent !zathura --synctex-forward " . line('.') . ":" . col('.') . ":" . bufname('%') . " " . bufname('%')[:-5]. ".pdf"
+  redraw!
+endfunction
+nnoremap <C-S> :call Synctex()<CR>
