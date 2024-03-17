@@ -26,13 +26,20 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # for some reason this should be loaded before oh-my-zsh.sh
 source ~/.dot-file-repo/zsh/powerlevel9k_settings.sh
 
-# Fall back mode for powerlevel9k when SSH-ing to server with dot-file-repo and
-# powerlevel9k installed, but dot-file-repo and fonts not available on client.
+# Fall back mode for powerlevel9k when SSH-ing to server with dot-file-repo and powerlevel9k
+# installed, but dot-file-repo and fonts not available on SSH client (e.g. phone, some windows
+# computer, ...).
+# See: https://github.com/Powerlevel9k/powerlevel9k/issues/835#issuecomment-388547906
 if [ -z $SSH_CLIENT ]; then
-    # this env variable will be available only if this .zshrc is used on client
+    # This env variable will be available only if this .zshrc is used on client, i.e. we assume
+    # that fonts are available on the client. The varaible
     export LC_CLIENT_HAS_DOT_FILE_REPO=1
 fi
 if [ -z $LC_CLIENT_HAS_DOT_FILE_REPO ]; then
+    # Normally LC_CLIENT_HAS_DOT_FILE_REPO is set on the client and then passed to the server
+    # because all env variables LC_* are passed to the server. If the server uses a different
+    # sshd_config, this might be broken. Workaround: edit this file on the server then.
+    echo "Using fallback zsh theme, because dot-file-repo and fonts not available on client..."
     source ~/.dot-file-repo/zsh/powerlevel9k_settings_no_font_fallback.sh
 fi
 
