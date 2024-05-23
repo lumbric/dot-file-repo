@@ -102,6 +102,7 @@ endif
 Plug 'python-mode/python-mode', {'branch': 'develop'}
 Plug 'sirtaj/vim-openscad'              " Syntax highlighting for open scad
 "Plug 'lervag/vimtex'
+Plug 'ibab/vim-snakemake'
 
 
 " Misc
