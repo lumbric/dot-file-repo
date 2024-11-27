@@ -208,3 +208,9 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 
 
 export PYTHONBREAKPOINT='ipdb.set_trace'
+
+
+# https://github.com/ajeetdsouza/zoxide
+if ! type "zenoxide" > /dev/null; then
+    source ~/.dot-file-repo/zsh/zoxide.sh
+fi
