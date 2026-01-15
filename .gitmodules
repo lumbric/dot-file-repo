@@ -97,3 +97,6 @@
 [submodule "neovim/plugged/vimtex"]
 	path = neovim/plugged/vimtex
 	url = https://github.com/lervag/vimtex.git
+[submodule "neovim/plugged/vim-snakemake"]
+	path = neovim/plugged/vim-snakemake
+	url = https://github.com/ibab/vim-snakemake.git
