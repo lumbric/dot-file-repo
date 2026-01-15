@@ -30,7 +30,7 @@
 # ignore them).
 #
 # Dependencies:
-#   zsh, bash, git, vim, neovim
+#   zsh, bash, git, vim, neovim, zoxide
 #   for vim: yapf3 yapf pep8 python3-autopep8 (is this really used?)
 #
 # Recommended:
